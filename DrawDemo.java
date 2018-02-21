@@ -50,7 +50,7 @@ public class DrawDemo
     }
     
     /**
-     * Draw a triangle on the screen.
+     * Draw a pentagon on the screen.
      */
     public void drawPentagon(int xPosition, int yPosition)
     {
@@ -62,6 +62,23 @@ public class DrawDemo
             
         }
     }
+    
+    /**
+     * Draw a polygon on the screen.
+     */
+    public void drawPolygon(int xPosition, int yPosition,int nLados)
+    {
+        Pen pen = new Pen(xPosition,yPosition, myCanvas);
+        pen.setColor(Color.PINK);
+        
+        for(int i=0;i<nLados;i++){    
+            pen.move(300/nLados);
+            pen.turn(360/nLados);
+            
+        }
+    }
+    
+    
 
     /**
      * Draw a wheel made of many squares.
