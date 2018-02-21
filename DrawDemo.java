@@ -45,10 +45,10 @@ public class DrawDemo
         for(int i=0;i<3;i++){    
             pen.move(100);
             pen.turn(-120);
-            
+
         }
     }
-    
+
     /**
      * Draw a pentagon on the screen.
      */
@@ -59,10 +59,10 @@ public class DrawDemo
         for(int i=0;i<5;i++){    
             pen.move(100);
             pen.turn(-72);
-            
+
         }
     }
-    
+
     /**
      * Draw a polygon on the screen.
      */
@@ -70,14 +70,32 @@ public class DrawDemo
     {
         Pen pen = new Pen(xPosition,yPosition, myCanvas);
         pen.setColor(Color.PINK);
-        
-        for(int i=0;i<nLados;i++){    
-            pen.move(300/nLados);
-            pen.turn(360/nLados);
-            
+
+        if(nLados > 2){
+            for(int i=0;i<nLados;i++){    
+                pen.move(300/nLados);
+                pen.turn(360/nLados);
+
+            }
+        }
+        else{
+            System.out.println("un poligono tiene que tener al menos 3 lados");
         }
     }
     
+    /**
+     * Draw a spiral on the screen.
+     */
+    public void drawSpiral(int xPosition, int yPosition,int nSpiral)
+    {
+        Pen pen = new Pen(xPosition,yPosition, myCanvas);
+        pen.setColor(Color.CYAN);
+        for(int i=2;i<nSpiral;i++){    
+            pen.move(i*3);
+            pen.turn(-90);
+
+        }
+    }
     
 
     /**
